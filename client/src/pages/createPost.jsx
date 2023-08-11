@@ -38,7 +38,7 @@ const CreatePost = () => {
       setLoading(true);
       const { name, prompt, photo } = form;
       if (name && prompt && photo) {
-        const post = await axios.post('http://localhost:3000/api/v1/posts', { name, prompt, photo }).catch(err => alert(err));
+        const post = await axios.post('https://ai-image-generation-app-one.vercel.app/api/v1/posts', { name, prompt, photo }).catch(err => alert(err));
         if (post) {
           navigate('/');
         }
