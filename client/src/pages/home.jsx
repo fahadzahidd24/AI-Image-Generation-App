@@ -21,7 +21,7 @@ const Home = () => {
     const fetchPosts = async () => {
         setLoading(true);
         try {
-            const posts = await axios.get('https://ai-image-generation-app-one.vercel.app/api/v1/posts').catch(err => alert(err));
+            const posts = await axios.get('https://ai-image-generation-app-zeta.vercel.app/api/v1/posts').catch(err => alert(err));
             if (posts) {
                 setAllPosts(posts.data.data);
             }

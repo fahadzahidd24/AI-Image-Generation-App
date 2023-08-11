@@ -10,11 +10,11 @@ const app = express();
 app.use(cors());
 app.use(express.json({ limit: "50mb" }));
 
+app.use('/api/v1/posts', postRoutes);
+app.use('/api/v1/g-image', GImageRoutes);
 app.use('/',(req,res)=>{
     res.send('Welcome to G-Image')
 })
-app.use('/api/v1/posts', postRoutes);
-app.use('/api/v1/g-image', GImageRoutes);
 
 const startServer = async () => {
     try {

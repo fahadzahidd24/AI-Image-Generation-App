@@ -18,7 +18,7 @@ const CreatePost = () => {
     if (form.prompt) {
       try {
         setGeneratingImg(true);
-        const response = await axios.post('http://localhost:3000/api/v1/g-image', { prompt: form.prompt }).catch(err => alert(err));
+        const response = await axios.post('https://ai-image-generation-app-zeta.vercel.app/api/v1/g-image', { prompt: form.prompt }).catch(err => alert(err));
         setform({ ...form, photo: `data:image/jpeg;base64,${response.data.photo}` })
       }
       catch (err) {
@@ -38,7 +38,7 @@ const CreatePost = () => {
       setLoading(true);
       const { name, prompt, photo } = form;
       if (name && prompt && photo) {
-        const post = await axios.post('https://ai-image-generation-app-one.vercel.app/api/v1/posts', { name, prompt, photo }).catch(err => alert(err));
+        const post = await axios.post('https://ai-image-generation-app-zeta.vercel.app/api/v1/posts', { name, prompt, photo }).catch(err => alert(err));
         if (post) {
           navigate('/');
         }
